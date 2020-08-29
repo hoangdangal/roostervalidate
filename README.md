@@ -20,6 +20,7 @@ var validatePattern = [
 ];
 
 var message = roostervalidate(validatePattern);
+
 alert(message);
 
 textboxId is id of input type=text.
