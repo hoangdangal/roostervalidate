@@ -7,8 +7,7 @@ Using:
 
 Example:
 
-var validatePattern = [ 
-    
+var validatePattern = [
     { id: 'textboxId1',focus: true, constraints: [ { type: 'integer', message: 'Input value must be number' } ] },    
     { id: 'textboxId2', constraints: [ { type: 'required', message: 'Input value 2 must be number' } 
 ] };
