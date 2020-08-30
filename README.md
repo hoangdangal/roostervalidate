@@ -23,6 +23,7 @@ id: input id
 focus: true, if you want to focus control when validate fail.
 
 constraint's type include : 
+
     required,
     integer,
     minlength,
