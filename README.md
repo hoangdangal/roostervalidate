@@ -1,5 +1,3 @@
-roostervalidate
-
 This is a javascript lib to validate form input before submit
 
 Using:
@@ -12,11 +10,11 @@ Example:
 var validatePattern = [ 
     { id: 'textboxId1',focus: true, constraints: [ { type: 'integer', message: 'Input value must be number' } ] },
     { id: 'textboxId2', constraints: [ { type: 'required', message: 'Input value 2 must be number' } ] }
-];
 
 var message = roostervalidate(validatePattern);
 
 alert(message);
+
 In example textboxId is id of input type=text. 
 
 id: input id
@@ -26,3 +24,4 @@ constraint's type include :
     integer,
     minlength,
     maxlength
+
