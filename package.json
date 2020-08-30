@@ -1,0 +1,20 @@
+{
+  "name": "@hoangdangal/roostervalidate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangdangal/roostervalidate.git"
+  },
+  "author": "hoangdangal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangdangal/roostervalidate/issues"
+  },
+  "homepage": "https://github.com/hoangdangal/roostervalidate#readme",
+  "description": "",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+}

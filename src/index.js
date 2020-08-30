@@ -9,6 +9,8 @@ function roostervalidate(constraintsData){
                 // validate required
                 if(constraint.type == 'required'){					
 					if (emptyStateArray.includes(document.getElementById(item.id).value)){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}
 				}
@@ -17,6 +19,8 @@ function roostervalidate(constraintsData){
 				if(constraint.type == 'integer'){
 					var intVal = parseInt(document.getElementById(item.id).value);
 					if (!Number.isInteger(intVal)){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}
                 }
@@ -24,6 +28,8 @@ function roostervalidate(constraintsData){
                 // validate minlength
                 if(constraint.type == 'minlength'){
 					if (document.getElementById(item.id).value.length < constraint.length){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}
                 }
@@ -31,6 +37,8 @@ function roostervalidate(constraintsData){
                 // validate maxlength
                 if(constraint.type == 'maxlength'){
 					if (document.getElementById(item.id).value.length > constraint.length){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}
                 }
