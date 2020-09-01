@@ -41,7 +41,29 @@ function roostervalidate(constraintsData){
 							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}
-                }
+				}
+				
+				// validate range
+				if(constraint.type == 'range'){
+					let min = constraint.min;
+					let max = constraint.max;
+					let floatVal = Number.parseFloat(document.getElementById(item.id).value);
+					if(floatVal < min || floatVal > max){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
+						return  constraint.message;
+					}
+				}
+
+				// validate email
+				if(constraint.type == 'email'){
+					let emailPattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;';					
+					if(!document.getElementById(item.id).value.match(emailPattern)){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
+						return  constraint.message;
+					}
+				}
 			}
 		}
 	}
