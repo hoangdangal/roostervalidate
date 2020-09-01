@@ -7,9 +7,11 @@ Using:
 
 Example:
 
-var validatePattern = [ 
-    { id: 'textboxId1',focus: true, constraints: [ { type: 'integer', message: 'Input value must be number' } ] },
-    { id: 'textboxId2', constraints: [ { type: 'required', message: 'Input value 2 must be number' } ] }
+var validatePattern = [
+
+    { id: 'textboxId1',focus: true, constraints: [ { type: 'integer', message: 'Input value must be number' } ] },    
+    { id: 'textboxId2', constraints: [ { type: 'required', message: 'Input value 2 must be number' } 
+] };
 
 var message = roostervalidate(validatePattern);
 
@@ -18,8 +20,10 @@ alert(message);
 In example textboxId is id of input type=text. 
 
 id: input id
-focus: true, if you want to focus control when validate fail
+focus: true, if you want to focus control when validate fail.
+
 constraint's type include : 
+
     required,
     integer,
     minlength,
