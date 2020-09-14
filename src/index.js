@@ -64,6 +64,16 @@ function roostervalidate(constraintsData){
 						return  constraint.message;
 					}
 				}
+
+				// validate pattern
+				if(constraint.type == 'pattern'){
+					let pattern = constraint.pattern;					
+					if(!document.getElementById(item.id).value.match(pattern)){
+						if('focus' in item && item.focus)
+							document.getElementById(item.id).focus();
+						return  constraint.message;
+					}					
+				}
 			}
 		}
 	}
