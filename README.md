@@ -23,9 +23,10 @@ id: input id
 focus: true, if you want to focus control when validate fail.
 
 For range validate :
+
 var validatePattern = [
 
-    { id: 'textboxId1',focus: true, constraints: [ { type: 'range',min: 0,max: 10, message: 'Input value must be number' } ] },    
+    { id: 'textboxId1',focus: true, constraints: [ { type: 'range',min: 0,max: 10, message: 'Input value must greater than 0 and less than 10' } ] },    
 ] };
 
 constraint's type include : 
