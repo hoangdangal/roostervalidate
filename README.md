@@ -29,6 +29,13 @@ var validatePattern = [
     { id: 'textboxId1',focus: true, constraints: [ { type: 'range',min: 0,max: 10, message: 'Input value must greater than 0 and less than 10' } ] },    
 ] };
 
+Pattern validate :
+
+var validatePattern = [
+
+    { id: 'textboxId1',focus: true, constraints: [ { type: 'pattern',pattern: /\d{3}-\d{2}-\d{4}/, message: 'Input value must greater than 0 and less than 10' } ] },    
+] };
+
 constraint's type include : 
 
     required,
@@ -36,5 +43,6 @@ constraint's type include :
     minlength,
     maxlength,
     email,
-    range
+    range,
+    pattern,
 
