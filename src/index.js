@@ -1,6 +1,11 @@
 function roostervalidate(constraintsData){
     var emptyStateArray = [ undefined,null,''];
 	for(var i=0;i<constraintsData.length;i++){
+
+		if(document.getElementById(item.id) == null){
+			throw new Exception("Element with id " + item.id + " is not exist.");
+		}
+
 		let item = constraintsData[i];
 		if(item.constraints != undefined){
 			for(let j=0;j<item.constraints.length;j++){
@@ -67,12 +72,31 @@ function roostervalidate(constraintsData){
 
 				// validate pattern
 				if(constraint.type == 'pattern'){
-					let pattern = constraint.pattern;					
-					if(!document.getElementById(item.id).value.match(pattern)){
+					let regex = new RegExp(constraint.pattern);								
+					if(!regex.test(document.getElementById(item.id).value)){
 						if('focus' in item && item.focus)
 							document.getElementById(item.id).focus();
 						return  constraint.message;
 					}					
+				}
+				
+				// validate pattern or
+				if(constraint.type == 'patternOr'){
+					for(var i=0;i<constraint.pattern.length;i++){
+						let regex = new RegExp(constraint.pattern[i]);								
+						if(regex.test(document.getElementById(item.id).value)){							
+							return '';
+						}
+
+						if(i == constraint.pattern.length - 1) {
+							if(!regex.test(document.getElementById(item.id).value)){							
+								if('focus' in item && item.focus)
+									document.getElementById(item.id).focus();
+								return  constraint.message;
+							}
+						}
+					}
+										
 				}
 			}
 		}
